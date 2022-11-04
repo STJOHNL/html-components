@@ -24,10 +24,6 @@ main {
     padding: 2% 5%;
 }
 
-h2 {
-    margin: 0 0 0 2%;
-}
-
 a {
     text-decoration: none;
     color: #f26623;
@@ -38,9 +34,24 @@ i {
     color: #f26623;
 }
 
+.section-heading {
+    font-size: 2.2rem;
+    margin: 25px 50px 0 50px;
+}
+
 #main {
     transition: margin-left .5s;
     padding: 0px;
+}
+
+.page-content {
+    padding: 0 0 0 50px;
+}
+
+@media screen and (min-width: 2000px) {
+    .page-content {
+        padding: 0 15%;
+    }
 }
 
 /* SIDENAV STYLES */
@@ -55,18 +66,22 @@ i {
     background-color: #222222;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
-    color: #818181;
+    padding-top: 50px;
 }
 
 .side-nav a {
     padding: 8px 8px 8px 32px;
     display: block;
     transition: 0.3s;
+    font-size: 1.2rem;
+    color: #f6f5f3;
+    border-bottom: 1px solid #f2662330;
 }
 
-.side-nav:hover {
-    color: #f1f1f1;
+.side-nav a:hover {
+    color: #f26623;
+    background-color: #333333;
+    border-left: 5px solid #f26623;
 }
 
 .side-nav .close-btn {
@@ -76,13 +91,25 @@ i {
     margin-left: 50px;
 }
 
-.close-btn {
-    font-size: 24px;
+.side-nav .close-btn {
+    border: none;
+    font-size: 1.5rem;
+}
+
+.side-nav .close-btn:hover {
+    border: none;
+    font-size: 1.7rem;
+    background-color: transparent;
 }
 
 .open-btn {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 1.5rem;
+    /* transition: 0.3s; */
+}
+
+.open-btn:hover {
+    /* font-size: 1.7rem; */
 }
 
 @media screen and (max-height: 450px) {
@@ -91,76 +118,8 @@ i {
     }
 
     .side-nav a {
-        font-size: 18px;
+        font-size: 1rem;
     }
-}
-
-/* HOMEPAGE STYLES */
-
-.continue-container {
-    background-color: white;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: row;
-    max-height: 250px;
-    margin: 2% 0 6% 0;
-    box-shadow: 2px 2px 10px 2px #00000050;
-    margin: 2%;
-}
-
-.continue--image {
-    border-radius: 15px 0 0 15px;
-    overflow: hidden;
-    object-fit: cover;
-}
-
-.continue--info {
-    display: flex;
-    flex-direction: column;
-    padding: 3%;
-}
-
-.continue--info h3 {
-    font-size: 22px;
-}
-
-.continue--info p {
-    font-size: 11px;
-    color: #2d2c2d;
-}
-
-.courses-container {
-    margin: 2% 0 6% 0;
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    overflow: scroll;
-}
-
-.course-card {
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 2px 2px 10px 2px #00000050;
-    margin: 2%;
-}
-
-.course-card img {
-    border-radius: 15px 15px 0 0;
-    overflow: hidden;
-    object-fit: cover;
-}
-
-.card--info {
-    padding: 2% 5%;
-}
-
-.card--info h4 {
-    font-size: 18px;
-}
-
-.card--info p {
-    font-size: 11px;
-    color: #2d2c2d;
 }
 
 /* HEADER BAR STYLES */
@@ -188,7 +147,6 @@ header {
 }
 
 .search--icon {
-    font-size: 16px;
     padding: 0 5px 0 15px;
 }
 
@@ -198,7 +156,7 @@ header {
     border-radius: 0 25px 25px 0;
     padding: 10px 50px 10px 0;
     background-color: #f6f5f3;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .search--input:focus {
@@ -212,5 +170,76 @@ header {
 
 .header--user {
     font-weight: bold;
-    font-size: 16px;
+}
+
+/* HOMEPAGE STYLES */
+
+.continue-container {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    height: 305px;
+    max-width: 1310px;
+    margin: 2% 0 6% 0;
+    box-shadow: 2px 2px 10px 2px #00000050;
+    margin: 25px 50px 50px 50px;
+}
+
+.continue--image {
+    border-radius: 15px 0 0 15px;
+    overflow: hidden;
+    object-fit: cover;
+    width: 37%;
+}
+
+.continue--info {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.continue--info h3 {
+    font-size: 2rem;
+}
+
+.continue--info p {
+    color: #2d2c2d;
+    font-size: 1.2rem;
+}
+
+.courses-container {
+    margin: 0 25px;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px 2px #00000050;
+    margin: 25px;
+    max-width: 410px;
+    max-height: 430px;
+}
+
+.course-card img {
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+    object-fit: cover;
+    width: 410px;
+    height: 62%;
+}
+
+.card--info {
+    padding: 2% 5%;
+}
+
+.card--info h4 {
+    font-size: 1.6rem;
+}
+
+.card--info p {
+    color: #2d2c2d;
 }
